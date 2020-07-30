@@ -6,11 +6,7 @@ import Team from './components/Team'
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        NBA API, enter first and last name 
         <Team />
-      </header>
     </div>
   );
 }

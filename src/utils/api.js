@@ -73,3 +73,24 @@ export function fetchPlayerStats(name){
             console.log(err)
         }) 
 }
+
+
+export function fetchLiveScores(){
+    return fetch("https://livescore6.p.rapidapi.com/matches/list-by-league?category=basketball&league=nba", {
+        "method": "GET",
+        "headers": {
+            "x-rapidapi-host": "livescore6.p.rapidapi.com",
+            "x-rapidapi-key": "B7tAHxbA6fmshrVBhLe2OUNB7T7vp1TzDPWjsnuz5E9v27Bf4o"
+        }
+    })
+    .then(response => {
+        return response.json()
+    })
+    .then(data => {
+        console.log(data, 'live scores')
+        return data
+    })
+    .catch(err => {
+        console.log(err);
+    });
+}
