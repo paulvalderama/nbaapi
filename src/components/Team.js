@@ -1,14 +1,16 @@
 import React from 'react'
 import { fetchPlayer, fetchImage, fetchPlayerStats } from '../utils/api'
+import image from '../images/NBA-Logo.png'
 
 
 export default class Team extends React.Component {
     state = {
         name: '',
         player:[],
-        encodedUrl: '',
-        playerStats: []
+        encodedUrl: null,
+        playerStats: [],        
     }
+    
     
     handleChange = (event) => {
         this.setState({
@@ -49,6 +51,7 @@ export default class Team extends React.Component {
                 })                             
             })            
     }
+
     
     render(){        
         return(            
@@ -80,9 +83,14 @@ export default class Team extends React.Component {
                                 College: {this.state.player.collegeName}
                             </li>                        
                             <li>
-                                <img src={this.state.encodedUrl} alt='player'/>
+                                {this.state.encodedUrl === null
+                                    ? <img style={{height: 100}} src={image} alt='nbalogo'/>
+                                    : <img src={this.state.encodedUrl} alt='player' />
+                                }
                             </li>
+
                         </ul>
+                        
                     </div>
             </div>
         ) 
