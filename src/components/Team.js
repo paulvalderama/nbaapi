@@ -16,11 +16,11 @@ export default class Team extends React.Component {
     }
 
     componentDidMount = () => {
-        const getLiveScores = () => {
+        const getLiveScore = () => {
             this.makeApiFetchLiveScores()        
         }
-        getLiveScores()
-        this._intervaal = window.setInterval(getLiveScores, 10000000)
+        getLiveScore()
+        this._intervaal = window.setInterval(getLiveScore, 10000000)
     }
     
     componentDidUpdate = () => {
