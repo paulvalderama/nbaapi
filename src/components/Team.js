@@ -20,7 +20,7 @@ export default class Team extends React.Component {
             this.makeApiFetchLiveScores()        
         }
         getLiveScore()
-        // this._intervaal = window.setInterval(getLiveScore, 10000)
+        this._intervaal = window.setInterval(getLiveScore, 10000)
     }
     
     componentDidUpdate = () => {
